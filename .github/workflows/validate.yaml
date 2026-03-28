@@ -1,0 +1,48 @@
+name: Validate Extended Toolbox
+
+on:
+  pull_request:
+    paths: ['toolbox/**/*.yaml']
+  push:
+    paths: ['toolbox/**/*.yaml']
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate specs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install clictl
+        run: curl -fsSL https://download.clictl.dev/install.sh | bash -s /usr/local/bin
+
+      - name: Validate specs
+        run: clictl toolbox validate toolbox/
+
+  sync-validation:
+    name: Validate read-only actions match official toolbox
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout extended toolbox
+        uses: actions/checkout@v4
+        with:
+          path: registry-extended
+
+      - name: Checkout official toolbox
+        uses: actions/checkout@v4
+        with:
+          repository: clictl/registry
+          path: registry
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Run sync validation
+        run: python registry-extended/scripts/validate_sync.py
+        working-directory: ${{ github.workspace }}
