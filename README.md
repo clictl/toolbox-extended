@@ -1,5 +1,7 @@
 # clictl Extended Toolbox
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 Full-action tool specs for CLIs that include destructive and write actions. These specs cover actions like stop, rm, delete, apply, and exec that are not in the official toolbox's safe subset.
 
 > **Note:** These specs have been merged into the main [clictl toolbox](https://github.com/clictl/toolbox) with the `destructive` tag. You can use either repo, but the main toolbox is recommended. Workspace ACL rules control access to destructive actions.
