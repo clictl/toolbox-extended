@@ -50,4 +50,5 @@ ALLOW tag:destructive group:devops   # Allow for devops team
 
 - [Main Toolbox](https://github.com/clictl/toolbox) - Official clictl toolbox (includes these specs)
 - [clictl.dev](https://clictl.dev) - Website
-- [www.soapbucket.org](https://www.soapbucket.org) - Soap Bucket LLC
+
+A [Soap Bucket LLC](https://www.soapbucket.org) project.
