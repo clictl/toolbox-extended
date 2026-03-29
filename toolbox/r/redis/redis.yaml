@@ -1,14 +1,12 @@
+spec: "1.0"
 name: redis
 description: Redis in-memory data store. Get, set, delete keys, flush databases, and query server info
 version: "1.0"
 category: devops
 tags: [redis, cache, database, tcp, key-value, in-memory]
-protocol: cli
-owner_name: Redis
-website: https://redis.io
-support_url: https://redis.io/docs/latest/
 
-connection:
+server:
+  type: tcp
   host: localhost
   port: 6379
   tls: false
@@ -19,10 +17,9 @@ connection:
       check: "redis-cli --version"
 
 auth:
-  - type: custom
-    key_env: REDIS_PASSWORD
-    inject:
-      handshake: "AUTH {{key}}\r\n"
+  env: REDIS_PASSWORD
+  inject:
+    handshake: "AUTH {{key}}\r\n"
 
 actions:
   - name: get

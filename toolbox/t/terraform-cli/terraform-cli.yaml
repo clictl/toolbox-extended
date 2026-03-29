@@ -1,22 +1,17 @@
+spec: "1.0"
 name: terraform-cli
 description: Terraform infrastructure as code CLI. Validate configurations, plan changes, inspect state, and apply or destroy infrastructure
 version: "1.0"
 category: devops
 tags: [terraform, iac, infrastructure, devops, hashicorp]
-protocol: cli
-owner_name: HashiCorp
-website: https://terraform.io
-support_url: https://developer.hashicorp.com/terraform/docs
 
-connection:
+server:
+  type: command
   shell: /bin/sh
   requires:
     - name: terraform
       url: https://developer.hashicorp.com/terraform/install
       check: "terraform --version"
-
-auth:
-  - type: none
 
 actions:
   - name: plan

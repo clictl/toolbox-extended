@@ -1,22 +1,17 @@
+spec: "1.0"
 name: kubectl
 description: Kubernetes cluster management. Get, describe, scale, delete resources and run commands in pods
 version: "1.0"
 category: devops
 tags: [kubernetes, k8s, containers, orchestration, devops, infrastructure]
-protocol: cli
-owner_name: Kubernetes
-website: https://kubernetes.io
-support_url: https://kubernetes.io/docs/reference/kubectl/
 
-connection:
+server:
+  type: command
   shell: /bin/sh
   requires:
     - name: kubectl
       url: https://kubernetes.io/docs/tasks/tools/
       check: "kubectl version --client"
-
-auth:
-  - type: none
 
 actions:
   - name: get

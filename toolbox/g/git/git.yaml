@@ -1,22 +1,17 @@
+spec: "1.0"
 name: git
 description: Git version control. View repository status, history, diffs, branches, commit details, and perform write operations like push, reset, and merge
 version: "1.0"
 category: developer
 tags: [git, version-control, vcs, developer]
-protocol: cli
-owner_name: Git
-website: https://git-scm.com
-support_url: https://git-scm.com/doc
 
-connection:
+server:
+  type: command
   shell: /bin/sh
   requires:
     - name: git
       url: https://git-scm.com
       check: "git --version"
-
-auth:
-  - type: none
 
 actions:
   - name: status

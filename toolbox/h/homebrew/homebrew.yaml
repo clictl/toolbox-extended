@@ -1,22 +1,17 @@
+spec: "1.0"
 name: homebrew
 description: Homebrew package manager for macOS and Linux. Search, inspect, list, install, upgrade, and uninstall packages
 version: "1.0"
 category: developer
 tags: [homebrew, brew, package-manager, macos, linux]
-protocol: cli
-owner_name: Homebrew
-website: https://brew.sh
-support_url: https://docs.brew.sh
 
-connection:
+server:
+  type: command
   shell: /bin/sh
   requires:
     - name: brew
       url: https://brew.sh
       check: "brew --version"
-
-auth:
-  - type: none
 
 actions:
   - name: search

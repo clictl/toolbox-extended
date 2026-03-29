@@ -1,22 +1,17 @@
+spec: "1.0"
 name: docker
 description: Docker container management. List, inspect, start, stop, remove, and get logs from containers
 version: "1.0"
 category: devops
 tags: [docker, containers, devops, infrastructure]
-protocol: cli
-owner_name: Docker
-website: https://docker.com
-support_url: https://docs.docker.com
 
-connection:
+server:
+  type: command
   shell: /bin/sh
   requires:
     - name: docker
       url: https://docs.docker.com/get-docker/
       check: "docker --version"
-
-auth:
-  - type: none
 
 actions:
   - name: ps
