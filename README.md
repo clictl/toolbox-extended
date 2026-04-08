@@ -1,6 +1,6 @@
 # clictl Extended Toolbox
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Full-action tool specs for CLIs that include destructive and write actions. These specs cover actions like stop, rm, delete, apply, and exec that are not in the official toolbox's safe subset.
 
