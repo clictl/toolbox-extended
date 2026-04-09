@@ -12,10 +12,10 @@ jobs:
     name: Validate specs
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install clictl
-        run: curl -fsSL https://clictl.dev/install.sh | sh
+        run: curl -fsSL https://download.clictl.dev/install.sh | sh
 
       - name: Validate specs
         run: clictl toolbox validate toolbox/
